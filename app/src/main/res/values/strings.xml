@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Mobile</string>
+
+    <string-array name="number">
+        <item>Janvier</item>
+        <item>Fevrier</item>
+        <item>Mars</item>
+        <item>Avril</item>
+        <item>Mai</item>
+        <item>Juin</item>
+        <item>Juillet</item>
+        <item>Septembre</item>
+        <item>Octobre</item>
+        <item>Novembre</item>
+        <item>Decembre</item>
+    </string-array>
+
+    <string-array name="annee">
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+    </string-array>
+</resources>
