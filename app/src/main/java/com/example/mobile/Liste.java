@@ -26,12 +26,16 @@ public class Liste  extends AppCompatActivity {
 
         ListView listView=(ListView) findViewById(R.id.liste_rapports);
         String mois = (String) getIntent().getSerializableExtra("mois");
-        String annee = (String) getIntent().getSerializableExtra("annee");
+
         String matricule = (String) getIntent().getSerializableExtra("matricule");
-        makeText(this, mois + "/" + annee + "de " + matricule ,Toast.LENGTH_SHORT).show();
+       // System.out.println(matricule);
+        makeText(this, mois + "de " + matricule ,Toast.LENGTH_SHORT).show();
         RapportVisiteBdd rvb = new RapportVisiteBdd(this);
         rvb.open();
-        final List<String> rapports = rvb.getRapportVisiteMat(matricule);
+         List<String> rapports = rvb.getRapportVisiteMatDate(matricule, mois);
+
+
+        System.out.println(rapports);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1 , rapports);
         listView.setAdapter(arrayAdapter);
         listView.getSelectedView();

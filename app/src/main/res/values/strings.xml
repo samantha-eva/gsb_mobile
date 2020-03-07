@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mobile</string>
 
-    <string-array name="number">
+    <string-array name="mois">
         <item>Janvier</item>
         <item>Fevrier</item>
         <item>Mars</item>

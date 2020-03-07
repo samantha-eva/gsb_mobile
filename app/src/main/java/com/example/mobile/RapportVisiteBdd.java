@@ -119,6 +119,33 @@ public class RapportVisiteBdd {
 
     }
 
+    public List<String> getdateRapport(String vis_matricule){
+        List<String> date_rapports = new ArrayList<String>();
+        String whereClause = "vis_matricule = ?";
+        String date;
+        String[] whereArgs = new String[]{vis_matricule};
+        String ordre = "rap_dateRapport";
+        Cursor cursor = db.query("Rapport_Visite", new String[] {"rap_dateRapport"},
+                whereClause,
+                whereArgs,"rap_dateRapport", null,
+                ordre);
+
+        if (cursor.moveToFirst())
+        {
+            do {
+                date = cursor.getString(0);
+                if(date != null)
+                    date_rapports.add(date);
+            }
+            while (cursor.moveToNext());
+        }
+        cursor.close();
+        return date_rapports;
+
+
+    }
+
+
     public List<String> getRapportVisiteMat(String vis_matricule){
         List<String> id_rapports = new ArrayList<String>();
         String whereClause = "vis_matricule = ?";
@@ -141,6 +168,30 @@ public class RapportVisiteBdd {
 
 
     }
+
+    public List<String> getRapportVisiteMatDate(String vis_matricule, String date_rapport){
+        List<String> id_rapports = new ArrayList<String>();
+        String whereClause = "vis_matricule = ? and rap_dateRapport = ?";
+        String[] whereArgs = new String[]{vis_matricule, date_rapport};
+        String ordre = "rap_num";
+        Cursor cursor = db.query("Rapport_Visite", new String[] {"rap_num"},
+                whereClause,
+                whereArgs,null, null,
+                ordre);
+
+        if (cursor.moveToFirst())
+        {
+            do {
+                id_rapports.add(cursor.getString(0));
+            }
+            while (cursor.moveToNext());
+        }
+        cursor.close();
+        return id_rapports;
+
+
+    }
+
 
 
 }

@@ -95,7 +95,6 @@ public class VisiteurBdd {
                 whereArgs,
                 null, null, null);
         Visiteur visiteur = cursorToVisiteur(cursor);
-        System.out.println("visiteurToBdd : " + visiteur);
         if (visiteur == null)
                 return false;
         else

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             RapportVisite rv = new RapportVisite();
             rv.setRapCoefConf("2");
             rv.setRapMotif("coronavirus");
-            rv.setRapDateRaport("10/20qw20");
+            rv.setRapDateRaport("10/2020");
             rv.setRapMatricule("a17");
             rv.setRapBilan("très contagieux");
             //rvb.insertRapportVisite(rv);

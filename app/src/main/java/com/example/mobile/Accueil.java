@@ -22,7 +22,7 @@ public class Accueil extends AppCompatActivity {
 
         Button consulter=(Button)findViewById(R.id.consulter);
         Button saisir=(Button)findViewById(R.id. saisir);
-
+    String matricule = (String) getIntent().getSerializableExtra("matricule");
     }
     public void consulter(View view){
         //Toast.makeText(this, "coucou de sam!", Toast.LENGTH_LONG).show();
