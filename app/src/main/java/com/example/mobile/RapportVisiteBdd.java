@@ -83,7 +83,7 @@ public class RapportVisiteBdd {
         List<RapportVisite> lesDates = new ArrayList<RapportVisite>();
 
         Cursor cursor = db.query("Rapport_Visite", new String[] {"vis_matricule", "rap_dateRapport"}, null,
-                null,null, null, null);
+                null,null, null, "pra_num");
 
         if (cursor.moveToFirst())
         {
